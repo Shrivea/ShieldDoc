@@ -15,7 +15,8 @@ app = FastAPI(title="ShieldDoc PII API")
 detector = RuleBasedPIIDetector("rules.yaml")
 
 # ── BERT engine ──────────────────────────────────────────────────────────────
-MODEL_PATH = "./models/bert-pii"
+
+MODEL_PATH = "shrivats65/ShieldDoc-BERT-PII"
 
 try:
     tokenizer = BertTokenizerFast.from_pretrained(MODEL_PATH)
