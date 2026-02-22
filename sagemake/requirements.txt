@@ -1,0 +1,36 @@
+# ── PII Shield — Local App Dependencies ──────────────────────────────────────
+# Install with: pip install -r requirements.txt
+# Python 3.9+ recommended
+
+# ── UI ────────────────────────────────────────────────────────────────────────
+streamlit>=1.32.0
+
+# ── PDF Processing ────────────────────────────────────────────────────────────
+PyMuPDF>=1.23.0                  # fitz — PDF text extraction + page-to-image
+
+# ── OCR ───────────────────────────────────────────────────────────────────────
+transformers==4.44.0             # TrOCR + BERT inference
+torch>=2.1.0                     # PyTorch backend (CPU is fine for inference)
+torchvision>=0.16.0              # Required by TrOCR image processor
+Pillow>=10.0.0                   # Image loading and manipulation
+opencv-python>=4.8.0             # Line segmentation for TrOCR preprocessing
+
+# ── NER / BERT Inference ──────────────────────────────────────────────────────
+# transformers covers this — already listed above
+tokenizers>=0.15.0               # Fast tokenizers for BERT
+accelerate==0.30.0               # Optimized inference, needed by transformers
+
+# ── Data Handling ─────────────────────────────────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+
+# ── PDF Export (Redacted Document) ────────────────────────────────────────────
+reportlab>=4.1.0                 # Generate clean redacted PDFs for export
+fpdf2>=2.7.0                     # Lightweight alternative for simple PDF output
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0             # Environment variable management
+tqdm>=4.66.0                     # Progress bars during model loading
+regex>=2023.10.3                 # More powerful regex engine than stdlib re
+seqeval>=1.2.2
+evaluate>=0.4.1

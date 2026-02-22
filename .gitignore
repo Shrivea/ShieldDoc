@@ -1,0 +1,18 @@
+echo "venv/" >> .gitignore
+echo "model.tar.gz" >> .gitignore
+echo "models/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+git add .gitignore
+git rm -r --cached venv/
+git commit -m "Remove venv from tracking, add gitignore"
+git pushvenv/
+model.tar.gz
+models/
+__pycache__/
+*.pyc
+venv/
+model.tar.gz
+models/
+__pycache__/
+*.pyc
